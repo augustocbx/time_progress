@@ -1,8 +1,18 @@
 require 'rubygems'
 require 'time'
+require 'yaml'
+require 'twitter'
 require 'active_support/all'
 first_day = '2019-01-01'.to_date
 today = Date.today
+
+conf = YAML.load_file('social_keys.yml').deep_symbolize_keys[:production]
+client = Twitter::REST::Client.new do |config|
+  config.consumer_key = conf[:twitter_consumer_key]
+  config.consumer_secret = conf[:twitter_consumer_secret]
+  config.access_token = conf[:twitter_access_token]
+  config.access_token_secret = conf[:twitter_access_token_secret]
+end
 
 total_days = 365*4+1
 current_days = (today - first_day).to_f
@@ -27,3 +37,4 @@ puts "#{fill}#{empty} #{percent}%"
 
 File.new('percent.txt', 'w').write(percent.to_s)
 puts "Novo percentual: #{percent}"
+CLIENT.update("#{fill}#{empty} #{percent}%")
