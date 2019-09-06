@@ -37,4 +37,4 @@ puts "#{fill}#{empty} #{percent}%"
 
 File.new('percent.txt', 'w').write(percent.to_s)
 puts "Novo percentual: #{percent}"
-CLIENT.update("#{fill}#{empty} #{percent}%")
+client.update("#{fill}#{empty} #{percent}%")
