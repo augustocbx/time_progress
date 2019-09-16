@@ -2,7 +2,7 @@ development: &development
   twitter_consumer_key: "lDsmAg5n3zDVTZ5dzugQTWZY4"
   twitter_consumer_secret: "Xi4ohEpGTP2YivqEnYtOJG60kcTXpgnIbUIYhpSHnYWhnRFo3X"
   twitter_access_token: "Xi4ohEpGTP2YivqEnYtOJG60kcTXpgnIbUIYhpSHnYWhnRFo3X"
-  access_token_secret: "Xi4ohEpGTP2YivqEnYtOJG60kcTXpgnIbUIYhpSHnYWhnRFo3X"
+  twitter_access_token_secret: "Xi4ohEpGTP2YivqEnYtOJG60kcTXpgnIbUIYhpSHnYWhnRFo3X"
 
 test:
   <<: *development

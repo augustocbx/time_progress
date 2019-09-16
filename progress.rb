@@ -35,6 +35,6 @@ fill = '▓'*(percent/reduce)
 empty = '░'*((100-percent)/reduce)
 puts "#{fill}#{empty} #{percent}%"
 
+client.update("#{fill}#{empty} #{percent}%")
 File.new('percent.txt', 'w').write(percent.to_s)
 puts "Novo percentual: #{percent}"
-client.update("#{fill}#{empty} #{percent}%")
